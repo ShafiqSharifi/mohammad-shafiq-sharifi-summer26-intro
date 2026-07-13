@@ -1,0 +1,1 @@
+console.log("Hello, Welcome to Week 2 Intro Class!")
