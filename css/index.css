@@ -67,6 +67,19 @@ h2 {
   border: 1px solid #3978b8;
 }
 
+#skills ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-item {
+  color: white;
+  display: flex;
+  padding: 10px;
+  background: #123a63;
+}
+
 #developer-name {
   font-family: Georgia, serif;
   font-size: 30px;
