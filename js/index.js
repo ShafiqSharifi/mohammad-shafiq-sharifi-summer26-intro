@@ -10,7 +10,7 @@ footer = document.querySelector("footer");
 const copyright = document.createElement("p");
 
 copyright.innerHTML =
-  "&copy; " + thisYear + " Mohammad Shafiq Sharifi. All rights reser ";
+  "&copy; " + thisYear + " Mohammad Shafiq Sharifi. All rights reserved ";
 footer.appendChild(copyright);
 
 const skills = ["JavaScript", "HTML", "CSS", "GitHub", "Adobe Photoshop"];
