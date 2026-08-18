@@ -1,0 +1,106 @@
+body {
+  background-color: #f4f7fa;
+  color: #0b1f3a;
+  font-family: Georgia, serif;
+}
+
+header {
+  border-top: solid rgb(2, 17, 131) 10px;
+  background-color: #ffffff;
+}
+
+nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+}
+nav a {
+  color: #123a63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #3978b8;
+}
+
+.section-icon {
+  width: 30px;
+  height: 30px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 24px;
+  font-weight: bold;
+  color: #123a63;
+}
+
+/* Experience title and date */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Reduce space below the job title and date */
+.experience-header h4,
+.experience-header p {
+  margin-bottom: 5px;
+}
+
+/* Reduce space above the company name */
+.experience-header + p {
+  margin-top: 5px;
+}
+
+/* Style each experience as a block */
+.experience-item {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #3978b8;
+}
+
+#developer-name {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #0b1f3a;
+  text-align: center;
+}
+
+#developer-title {
+  text-align: center;
+}
+
+section {
+  margin: 20px;
+  padding: 15px;
+}
+
+.connect-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.connect-links a {
+  background-color: #123a63;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.connect-links a:hover {
+  background-color: #3978b8;
+}
+
+.experience-item:hover {
+  background-color: #f4f7fa;
+}
