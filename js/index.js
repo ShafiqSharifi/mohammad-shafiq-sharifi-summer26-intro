@@ -55,7 +55,9 @@ messageForm.addEventListener("submit", function (event) {
 
   let removeButton = document.createElement("button");
   removeButton.classList.add("remove-button");
-  removeButton.innerText = "Remove";
+  removeButton.innerText = "remove";
+  //   removeButton.innerText = "remove"; (To capitalize the first letter of the edit button in the app)
+
   removeButton.type = "button";
   removeButton.addEventListener("click", function (event) {
     let entry = event.target.closest(".message-entry");
@@ -65,7 +67,9 @@ messageForm.addEventListener("submit", function (event) {
 
   let editButton = document.createElement("button");
   editButton.classList.add("edit-button");
-  editButton.innerText = "Edit";
+  editButton.innerText = "edit";
+  //   editButton.innerText = "edit"; (To capitalize the first letter of the edit button in the app)
+
   editButton.type = "button";
 
   let isEditing = false;
@@ -78,7 +82,7 @@ messageForm.addEventListener("submit", function (event) {
       input.value = messageSpan.innerText;
       input.classList.add("edit-input");
       messageSpan.replaceWith(input);
-      editButton.innerText = "Save";
+      editButton.innerText = "save";
       isEditing = true;
     } else {
       let input = newMessage.querySelector("input");
