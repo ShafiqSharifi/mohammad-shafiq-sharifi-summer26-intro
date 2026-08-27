@@ -121,3 +121,124 @@ section {
 .experience-item:hover {
   background-color: #f4f7fa;
 }
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 360px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 14px;
+  color: #123a63;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #3978b8;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  box-sizing: border-box;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #3978b8;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.form-field input {
+  height: 30px;
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 12px 28px;
+  font-size: 16px;
+  min-height: 44px;
+  background: #123a63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.message-entry {
+  background: white;
+  border: 1px solid #3978b8;
+  border-radius: 5px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  list-style: none;
+  max-width: 620px;
+}
+
+#messages ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.remove-button,
+.edit-button {
+  padding: 10px 16px;
+  min-height: 40px;
+  min-width: 80px;
+  background: #123a63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.message-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button:hover,
+.remove-button:hover {
+  background-color: #3978b8;
+}
+
+.form-submit:hover {
+  background-color: #3978b8;
+}
+
+@media (max-width: 600px) {
+  .form-field input,
+  .form-field textarea,
+  .form-submit {
+    font-size: 18px;
+    min-height: 48px;
+  }
+}
