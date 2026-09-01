@@ -105,3 +105,25 @@ messageForm.addEventListener("submit", function (event) {
 
   messageForm.reset();
 });
+
+
+// Lesson 09 Codes starts below:
+
+fetch("https://api.github.com/users/ShafiqSharifi/repos")
+  .then((response) => response.json())
+  .then((repositories) => {
+    console.log(repositories);
+
+    // MOVE YOUR LOOP HERE (inside the .then)
+    let projectsSection = document.getElementById("projects");
+    let projectsList = projectsSection.querySelector("ul");
+
+    for (let i = 0; i < repositories.length; i++) {
+      let project = document.createElement("li");
+      project.innerText = repositories[i].name; // Use .name property
+      projectsList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    console.log("Error:", error.message);
+  });
