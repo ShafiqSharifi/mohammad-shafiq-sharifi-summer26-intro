@@ -71,17 +71,22 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .skills-item {
   color: white;
   display: flex;
-  padding: 10px;
   background: #123a63;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+}
+
+.skills-item:hover {
+  background-color: #3978b8;
 }
 
 #developer-name {
@@ -102,16 +107,19 @@ section {
 
 .connect-links {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .connect-links a {
   background-color: #123a63;
   color: white;
-  padding: 8px 15px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .connect-links a:hover {
@@ -234,11 +242,51 @@ section {
   background-color: #3978b8;
 }
 
+/* Project Section CSS */
+
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#projects li {
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #3978b8;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #123a63;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(57, 120, 184, 0.1);
+  cursor: pointer;
+}
+
+#projects li:hover {
+  background-color: #f4f7fa;
+  box-shadow: 0 8px 16px rgba(57, 120, 184, 0.2);
+  transform: translateY(-4px);
+  border-color: #123a63;
+}
+
+@media (max-width: 768px) {
+  #projects ul {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  #projects li {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 600px) {
-  .form-field input,
-  .form-field textarea,
-  .form-submit {
-    font-size: 18px;
-    min-height: 48px;
+  #projects ul {
+    grid-template-columns: 1fr;
   }
 }
