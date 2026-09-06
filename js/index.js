@@ -106,7 +106,6 @@ messageForm.addEventListener("submit", function (event) {
   messageForm.reset();
 });
 
-
 // Lesson 09 Codes starts below:
 
 fetch("https://api.github.com/users/ShafiqSharifi/repos")
