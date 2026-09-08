@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link href="css/openapi.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+        <h1 id="open-api">Open API</h1>
+
+        <nav>
+          <a href="index.html">Back to Home</a>
+          
+        </nav>
+    </header>
+      <br> </br>
+    <main>
+      <h2 id="weather-text"> Weather Lookup</h2>
+
+      <section id="weather-section">
+        <form id="weather-form">
+          <div id="city-field">
+            <label>Search City</label>
+          <input type="text" id="city-input" placeholder="Type The City & State Here..." required/>
+          </div>
+
+            <button type="submit" class="search-city">Search</button>
+          
+        </form>
+      </section>
+        <div id="search-result">
+            <div class="result-row">
+              <h3>City: </h3>
+              <h4 id="city"> </h4>
+            </div>
+
+            <div id="data-nav">
+              <button type="button" class="get-temperature">Get City Temperature</button>
+              <button type="button" class="get-weather-condition">Get City Condition</button>
+
+            </div>
+
+            <div class="result-row">
+              <h3 id="result-label"></h3>
+              <h4 id="result-value"></h4>
+            </div>
+         </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Mohammad Shafiq Sharifi. All rights reserved
+    </footer>
+
+    <script src="js/openapi.js"></script>
+  </body>
+</html>
