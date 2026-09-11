@@ -37,24 +37,42 @@ function getConditionText(code) {
 }
 
 async function getTemperature() {
-  const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${currentLat}&longitude=${currentLon}&current=temperature_2m&temperature_unit=fahrenheit`,
-  );
-  const data = await response.json();
-  let temperature = data.current.temperature_2m;
-  resultLabelEl.textContent = "Temperature: ";
-  resultValueEl.textContent = temperature + "°F";
+  try {
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${currentLat}&longitude=${currentLon}&current=temperature_2m&temperature_unit=fahrenheit`,
+    );
+    if (!response.ok) {
+      throw new Error(`Weather request failed (status ${response.status})`);
+    }
+    const data = await response.json();
+    const temperature = data.current.temperature_2m;
+    resultLabelEl.textContent = "Temperature: ";
+    resultValueEl.textContent = temperature + "°F";
+  } catch (error) {
+    console.error(error);
+    resultLabelEl.textContent = "Temperature: ";
+    resultValueEl.textContent = "Could not load temperature. Please try again.";
+  }
 }
 
 async function getCondition() {
-  const response = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${currentLat}&longitude=${currentLon}&current=weather_code`,
-  );
-  const data = await response.json();
-  const code = data.current.weather_code;
-  resultLabelEl.textContent = "Condition: ";
-  const conditionText = getConditionText(code);
-  resultValueEl.textContent = conditionText;
+  try {
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${currentLat}&longitude=${currentLon}&current=weather_code`,
+    );
+    if (!response.ok) {
+      throw new Error(`Weather request failed (status ${response.status})`);
+    }
+    const data = await response.json();
+    const code = data.current.weather_code;
+    resultLabelEl.textContent = "Condition: ";
+    const conditionText = getConditionText(code);
+    resultValueEl.textContent = conditionText;
+  } catch (error) {
+    console.error(error);
+    resultLabelEl.textContent = "Condition: ";
+    resultValueEl.textContent = "Could not load condition. Please try again.";
+  }
 }
 
 async function searchCity(cityName) {
