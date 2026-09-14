@@ -4,6 +4,24 @@ body {
   font-family: Georgia, serif;
 }
 
+.profile-photo {
+  display: block;
+  width: 260px;
+  height: 260px;
+  margin: 24px auto 12px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #123a63;
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.2);
+}
+
+@media (max-width: 600px) {
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 header {
   border-top: solid rgb(2, 17, 131) 10px;
   background-color: #ffffff;
