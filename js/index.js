@@ -13,7 +13,20 @@ copyright.innerHTML =
   "&copy; " + thisYear + " Mohammad Shafiq Sharifi. All rights reserved ";
 footer.appendChild(copyright);
 
-const skills = ["JavaScript", "HTML", "CSS", "GitHub", "Adobe Photoshop"];
+const skills = [
+  "Java",
+  "C++",
+  "Python",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "MySQL",
+  "SQL Server",
+  "Git",
+  "GitHub",
+  "Adobe Photoshop",
+  "Adobe Premiere",
+];
 
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
@@ -44,9 +57,6 @@ messageForm.addEventListener("submit", function (event) {
   let usersName = event.target.usersName.value;
   let usersEmail = event.target.usersEmail.value;
   let usersMessage = event.target.usersMessage.value;
-  console.log(usersName);
-  console.log(usersEmail);
-  console.log(usersMessage);
   let messageSection = document.getElementById("messages");
   let messageList = messageSection.querySelector("ul");
   let newMessage = document.createElement("li");
@@ -106,20 +116,29 @@ messageForm.addEventListener("submit", function (event) {
   messageForm.reset();
 });
 
-// Lesson 09 Codes starts below:
-
 fetch("https://api.github.com/users/ShafiqSharifi/repos")
   .then((response) => response.json())
   .then((repositories) => {
     console.log(repositories);
 
-    // MOVE YOUR LOOP HERE (inside the .then)
     let projectsSection = document.getElementById("projects");
     let projectsList = projectsSection.querySelector("ul");
 
     for (let i = 0; i < repositories.length; i++) {
       let project = document.createElement("li");
-      project.innerText = repositories[i].name; // Use .name property
+
+      let title = document.createElement("a");
+      title.innerText = repositories[i].name;
+      title.href = repositories[i].html_url;
+      title.target = "_blank";
+      title.rel = "noopener noreferrer";
+
+      let desc = document.createElement("p");
+      desc.innerText =
+        repositories[i].description || "No description available.";
+
+      project.appendChild(title);
+      project.appendChild(desc);
       projectsList.appendChild(project);
     }
   })

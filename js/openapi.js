@@ -9,8 +9,8 @@ const resultValueEl = document.getElementById("result-value");
 const temperatureButton = document.querySelector(".get-temperature");
 const conditionButton = document.querySelector(".get-weather-condition");
 
-let currentLat = 37.6391;
-let currentLon = -120.9969;
+let currentLat = null;
+let currentLon = null;
 
 function getConditionText(code) {
   let condition = "unknown";
@@ -80,8 +80,6 @@ async function searchCity(cityName) {
   const response = await fetch(url);
   const data = await response.json();
 
-  console.log(data); // always look at the real shape first
-
   if (!data.results || data.results.length === 0) {
     alert("Invalid city. Please try again.");
     return;
@@ -107,4 +105,3 @@ temperatureButton.addEventListener("click", () => {
 conditionButton.addEventListener("click", () => {
   getCondition();
 });
-

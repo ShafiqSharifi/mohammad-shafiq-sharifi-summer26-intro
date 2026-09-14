@@ -41,25 +41,21 @@ h2 {
   color: #123a63;
 }
 
-/* Experience title and date */
 .experience-header {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-/* Reduce space below the job title and date */
 .experience-header h4,
 .experience-header p {
   margin-bottom: 5px;
 }
 
-/* Reduce space above the company name */
 .experience-header + p {
   margin-top: 5px;
 }
 
-/* Style each experience as a block */
 .experience-item {
   background-color: #ffffff;
   padding: 15px;
@@ -241,8 +237,6 @@ section {
 .form-submit:hover {
   background-color: #3978b8;
 }
-
-/* Project Section CSS */
 
 #projects ul {
   display: grid;
